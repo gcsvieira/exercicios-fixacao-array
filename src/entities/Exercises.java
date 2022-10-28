@@ -66,6 +66,7 @@ public class Exercises {
         System.out.println("Média: " + avgNumbers);
         System.out.println();
 
+        scan.close();
     }
 
 }
