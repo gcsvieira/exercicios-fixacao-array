@@ -61,9 +61,10 @@ public class Exercises {
         for (int i = 0; i < arrayNumbers.length; i++) {
             System.out.print(" " + arrayNumbers[i]);
         }
-        System.out.println();
+        System.out.println("\n");
         System.out.println("Soma: " + sumNumbers);
         System.out.println("Média: " + avgNumbers);
+        System.out.println();
 
     }
 
