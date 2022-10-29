@@ -69,4 +69,41 @@ public class Exercises {
         scan.close();
     }
 
+    public void peopleHeight() {
+        double avgHeight = 0.00;
+        int personLowerThan16 = 0;
+
+        System.out.print("Quantas pessoas serão digitadas? ");
+        lengthArray = Integer.parseInt(scan.nextLine());
+
+        Person[] person = new Person[lengthArray];
+
+        for (int i = 0; i < person.length; i++) {
+            System.out.println("Dados da " + (i + 1) + "a pessoa:");
+            System.out.print("Nome: ");
+            String name = scan.nextLine();
+            System.out.print("Idade: ");
+            int age = Integer.parseInt(scan.nextLine());
+            System.out.print("Altura: ");
+            double height = Double.parseDouble(scan.nextLine());
+
+            person[i] = new Person(name, age, height);
+            avgHeight += person[i].getHeight();
+
+            if (person[i].getAge() < 16)
+                personLowerThan16 += 1;
+
+        }
+
+        System.out.printf("Altura média: %.2f%n", (avgHeight / person.length));
+        System.out.printf("Pessoas com menos de 16 anos: %.0f porcento %n",
+                (((double) personLowerThan16 / (double) person.length) * 100));
+
+        for (int i = 0; i < person.length; i++) {
+            if (person[i].getAge() < 16)
+                System.out.println(person[i].getName());
+        }
+
+        scan.close();
+    }
 }
